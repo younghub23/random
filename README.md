@@ -85,6 +85,33 @@ python main.py clear-cache
 python main.py analyze AAPL --no-cache
 ```
 
+### 🚀 Batch Analysis - NEW!
+
+Analyze hundreds or thousands of stocks at once to find the best opportunities:
+
+```bash
+# Analyze entire S&P 500
+python batch_analyzer.py
+
+# Analyze top 100 stocks
+python batch_analyzer.py --max-stocks 100
+
+# Analyze NASDAQ 100 (tech-focused)
+python batch_analyzer.py --universe nasdaq100
+
+# Find high-quality stocks (score >= 70)
+python batch_analyzer.py --max-stocks 200 --min-score 70
+```
+
+**Features:**
+- Analyze 100-1000+ stocks automatically
+- Get top stocks across all sectors
+- Identify investment opportunities by category (Momentum Plays, Value Plays, etc.)
+- Export results to CSV/JSON for further analysis
+- Smart rate limiting to avoid API blocks
+
+**See [BATCH_ANALYZER_GUIDE.md](BATCH_ANALYZER_GUIDE.md) for complete documentation.**
+
 ## Scoring Methodology
 
 ### Momentum Score (0-100 points)
