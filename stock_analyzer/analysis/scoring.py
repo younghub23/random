@@ -1,6 +1,6 @@
 """Composite scoring system combining momentum and fundamental analysis."""
 from typing import Dict, Any
-from ..utils.config import Config
+from utils.config import Config
 
 
 class CompositeScorer:

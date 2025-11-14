@@ -2,7 +2,7 @@
 import pandas as pd
 import numpy as np
 from typing import Dict, Any, Optional
-from ..utils.config import Config
+from utils.config import Config
 
 
 class MomentumAnalyzer:

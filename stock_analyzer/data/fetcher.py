@@ -3,8 +3,8 @@ import yfinance as yf
 import pandas as pd
 from datetime import datetime, timedelta
 from typing import Optional, Dict, Any
-from .cache import DataCache
-from ..utils.config import Config
+from data.cache import DataCache
+from utils.config import Config
 
 
 class StockDataFetcher:

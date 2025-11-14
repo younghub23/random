@@ -2,7 +2,11 @@
 """Main CLI entry point for the Stock Analyzer."""
 import argparse
 import sys
+import os
 from typing import List, Optional
+
+# Add the current directory to Python path to allow imports
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from data.fetcher import StockDataFetcher
 from analysis.momentum import MomentumAnalyzer

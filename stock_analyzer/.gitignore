@@ -1,0 +1,29 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Cache directory
+.cache/
+
+# Environment
+.env
+venv/
+env/
+
+# Downloads
+*.tar.gz
+multitasking-*/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
