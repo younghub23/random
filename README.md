@@ -112,6 +112,34 @@ python batch_analyzer.py --max-stocks 200 --min-score 70
 
 **See [BATCH_ANALYZER_GUIDE.md](BATCH_ANALYZER_GUIDE.md) for complete documentation.**
 
+### ⏰ Automated Daily Reports - NEW!
+
+Run analysis automatically every morning and get email summaries:
+
+```bash
+# Quick setup (Linux/Mac)
+./setup_cron.sh
+
+# Manual test
+python daily_runner.py
+```
+
+**Features:**
+- Schedule daily runs at any time (e.g., 9am ET every morning)
+- Email reports with top stocks and opportunities
+- Save results to CSV/JSON automatically
+- Works on Linux, Mac, Windows, or cloud servers
+- Configurable: choose universe, number of stocks, email settings
+
+**Email Report Includes:**
+- Summary statistics
+- Top 20 stocks ranked by score
+- Strong Buy opportunities
+- Sector breakdowns
+- Attached CSV for Excel/Sheets
+
+**See [SCHEDULING_GUIDE.md](SCHEDULING_GUIDE.md) for complete setup instructions.**
+
 ## Scoring Methodology
 
 ### Momentum Score (0-100 points)

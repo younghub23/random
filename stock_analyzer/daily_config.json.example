@@ -1,0 +1,19 @@
+{
+  "universe": "sp500",
+  "max_stocks": 500,
+  "min_score": 0,
+  "delay": 0.5,
+  "output_directory": "daily_reports",
+  "top_n_stocks": 20,
+
+  "email_enabled": false,
+  "email_from": "your_email@gmail.com",
+  "email_to": ["recipient@example.com"],
+  "email_password": "your_app_password_here",
+  "smtp_server": "smtp.gmail.com",
+  "smtp_port": 587,
+  "send_csv": true,
+
+  "comment": "Set email_enabled to true to receive daily email reports",
+  "comment2": "For Gmail, use an App Password: https://support.google.com/accounts/answer/185833"
+}
