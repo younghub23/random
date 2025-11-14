@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyberpunk Snake</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">CYBER<span class="neon">SNAKE</span></h1>
+            <div class="glitch-line"></div>
+        </div>
+
+        <div class="game-info">
+            <div class="score-container">
+                <span class="label">SCORE:</span>
+                <span id="score" class="value">0</span>
+            </div>
+            <div class="score-container">
+                <span class="label">HIGH SCORE:</span>
+                <span id="highScore" class="value">0</span>
+            </div>
+        </div>
+
+        <canvas id="gameCanvas"></canvas>
+
+        <div class="controls">
+            <div class="control-text">Use arrow keys or WASD to move</div>
+            <button id="startBtn" class="cyber-btn">START GAME</button>
+            <button id="pauseBtn" class="cyber-btn" style="display:none;">PAUSE</button>
+        </div>
+
+        <div id="gameOver" class="game-over" style="display:none;">
+            <h2 class="game-over-title">GAME OVER</h2>
+            <p class="final-score">Final Score: <span id="finalScore">0</span></p>
+            <button id="restartBtn" class="cyber-btn">RESTART</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
