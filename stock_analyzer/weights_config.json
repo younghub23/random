@@ -1,0 +1,91 @@
+{
+  "comment": "Stock Analysis Scoring Weights Configuration",
+  "version": "1.0",
+
+  "composite_weights": {
+    "momentum": 0.35,
+    "fundamental": 0.50,
+    "sentiment": 0.15,
+    "comment": "Top-level category weights - must sum to 1.0"
+  },
+
+  "momentum_weights": {
+    "comment": "Individual momentum indicator weights - must sum to 1.0",
+    "moving_averages": 0.20,
+    "rsi": 0.15,
+    "macd": 0.15,
+    "volume": 0.15,
+    "price_momentum": 0.20,
+    "trend_strength": 0.15,
+    "details": {
+      "moving_averages": "Price position relative to 20/50/200-day MAs",
+      "rsi": "Relative Strength Index - overbought/oversold detection",
+      "macd": "Moving Average Convergence Divergence - trend direction",
+      "volume": "Volume trends and price-volume correlation",
+      "price_momentum": "Multi-period return analysis (1/3/6/12 months)",
+      "trend_strength": "ADX - Average Directional Index"
+    }
+  },
+
+  "fundamental_weights": {
+    "comment": "Individual fundamental metric weights - must sum to 1.0",
+    "valuation": 0.25,
+    "profitability": 0.25,
+    "financial_health": 0.25,
+    "growth": 0.25,
+    "details": {
+      "valuation": "P/E, PEG, P/B ratios - is it fairly priced?",
+      "profitability": "Margins, ROE, ROA - how profitable is the business?",
+      "financial_health": "Debt levels, liquidity, cash flow - can it survive downturns?",
+      "growth": "Revenue and earnings growth - is it expanding?"
+    }
+  },
+
+  "sentiment_weights": {
+    "comment": "Sentiment analysis component weights - must sum to 1.0",
+    "base_sentiment": 0.70,
+    "positive_ratio": 0.20,
+    "headline_volume": 0.10,
+    "details": {
+      "base_sentiment": "Direct sentiment score from news headline analysis",
+      "positive_ratio": "Proportion of positive vs negative headlines",
+      "headline_volume": "News volume indicates market attention/interest"
+    }
+  },
+
+  "max_scores": {
+    "comment": "Maximum points for each category (out of 100 total)",
+    "momentum": {
+      "moving_averages": 20,
+      "rsi": 15,
+      "macd": 15,
+      "volume": 15,
+      "price_momentum": 20,
+      "trend_strength": 15
+    },
+    "fundamental": {
+      "valuation": 25,
+      "profitability": 25,
+      "financial_health": 25,
+      "growth": 25
+    },
+    "sentiment": {
+      "total": 100
+    }
+  },
+
+  "backtesting": {
+    "holding_periods": [30, 90, 180, 365],
+    "rebalance_frequency_days": 30,
+    "min_score_threshold": 70,
+    "max_positions": 20,
+    "comment": "Configuration for backtesting parameters"
+  },
+
+  "notes": {
+    "momentum": "Technical analysis captures price trends and market psychology",
+    "fundamental": "Financial analysis captures business quality and valuation",
+    "sentiment": "News sentiment captures market narrative and public perception",
+    "backtesting": "Historical validation helps optimize weights for predictive power"
+  }
+}

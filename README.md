@@ -140,6 +140,56 @@ python daily_runner.py
 
 **See [SCHEDULING_GUIDE.md](SCHEDULING_GUIDE.md) for complete setup instructions.**
 
+### 🧪 Backtesting & Weight Optimization - NEW!
+
+Validate and optimize the scoring model using historical data:
+
+```bash
+# Backtest a stock to see if scores predict returns
+python backtest.py --ticker AAPL --start-date 2023-01-01 --end-date 2024-01-01
+
+# Optimize weights for maximum returns
+python optimize_weights.py --tickers AAPL MSFT GOOGL NVDA --date 2023-06-01 --mode grid
+
+# Test portfolio selection strategy
+python backtest.py --tickers AAPL MSFT GOOGL NVDA TSLA --start-date 2023-01-01 --top-n 3
+```
+
+**Features:**
+- **Historical validation** - Test if high scores actually led to higher returns
+- **Metric importance analysis** - See which indicators are most predictive
+- **Weight optimization** - Find optimal weights for your investment style
+- **Performance metrics** - Sharpe ratio, win rate, average returns
+- **Sentiment analysis** - Add news sentiment to scoring (configurable weight)
+- **Configurable weights** - Every metric has adjustable weight
+
+**Key Capabilities:**
+1. **Backtesting Engine**
+   - Test stocks at historical dates
+   - Calculate actual future returns
+   - Measure correlation: score vs. performance
+   - Compare to benchmarks
+
+2. **Weight Optimization**
+   - Grid search all weight combinations
+   - Optimize for return, Sharpe ratio, or win rate
+   - Test different investment styles
+   - Validate across multiple time periods
+
+3. **Sentiment Analysis**
+   - Scrapes recent news headlines
+   - Calculates positive/negative sentiment
+   - Adds sentiment score to composite
+   - Configurable weight (default 15%)
+
+**All weights are configurable in `weights_config.json`:**
+- Composite: Momentum vs Fundamental vs Sentiment
+- Momentum: MA, RSI, MACD, Volume, Price Momentum, Trend Strength
+- Fundamental: Valuation, Profitability, Financial Health, Growth
+- Sentiment: Base sentiment, Positive ratio, Headline volume
+
+**See [BACKTESTING_GUIDE.md](BACKTESTING_GUIDE.md) for complete documentation.**
+
 ## Scoring Methodology
 
 ### Momentum Score (0-100 points)
