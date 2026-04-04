@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Censure</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Censure</h1>
+      <label class="toggle-switch">
+        <input type="checkbox" id="globalToggle" checked>
+        <span class="slider"></span>
+      </label>
+    </header>
+
+    <div class="stats">
+      <span id="filteredCount">0</span> items filtered on this page
+    </div>
+
+    <div class="quick-add">
+      <input type="text" id="keywordInput" placeholder="Add keyword to block..." autocomplete="off">
+      <button id="addBtn" title="Add keyword">+</button>
+    </div>
+
+    <div class="keyword-list" id="keywordList">
+      <!-- Keywords will be rendered here -->
+    </div>
+
+    <div class="filter-mode">
+      <label>
+        <input type="radio" name="filterMode" value="redact" checked> Redact words
+      </label>
+      <label>
+        <input type="radio" name="filterMode" value="hide"> Hide entire post
+      </label>
+    </div>
+
+    <div class="site-controls">
+      <button id="whitelistBtn" class="site-btn">Whitelist this site</button>
+      <button id="blacklistBtn" class="site-btn">Remove from whitelist</button>
+    </div>
+
+    <footer>
+      <a href="#" id="optionsLink">Full Settings</a>
+    </footer>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

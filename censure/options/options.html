@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Censure — Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Censure Settings</h1>
+      <p class="subtitle">Take control of your information diet</p>
+    </header>
+
+    <nav class="tabs">
+      <button class="tab active" data-tab="keywords">Keywords</button>
+      <button class="tab" data-tab="people">People</button>
+      <button class="tab" data-tab="sites">Sites</button>
+      <button class="tab" data-tab="advanced">Advanced</button>
+    </nav>
+
+    <!-- Keywords Tab -->
+    <section id="tab-keywords" class="tab-content active">
+      <div class="section-header">
+        <h2>Blocked Keywords &amp; Phrases</h2>
+        <div class="actions">
+          <button id="importBtn" class="btn-secondary">Import</button>
+          <button id="exportBtn" class="btn-secondary">Export</button>
+        </div>
+      </div>
+
+      <div class="add-keyword-form">
+        <input type="text" id="newKeyword" placeholder="Enter keyword or phrase...">
+        <select id="categorySelect">
+          <option value="">No category</option>
+        </select>
+        <input type="text" id="newCategory" placeholder="Or new category...">
+        <button id="addKeywordBtn" class="btn-primary">Add</button>
+      </div>
+
+      <div id="categoryFilters" class="category-filters">
+        <!-- Category toggle chips -->
+      </div>
+
+      <div id="keywordsList" class="keywords-list">
+        <!-- Keywords rendered here -->
+      </div>
+
+      <input type="file" id="importFile" accept=".json" style="display:none">
+    </section>
+
+    <!-- People Tab (Phase 2 placeholder) -->
+    <section id="tab-people" class="tab-content">
+      <h2>Blocked People</h2>
+      <p class="coming-soon">Face recognition filtering will be available in a future update.</p>
+      <p>For now, add people's names as keywords in the Keywords tab to filter text mentions.</p>
+
+      <div class="image-url-section">
+        <h3>Image URL Patterns</h3>
+        <p class="description">Block images whose URLs match these patterns. Use * as wildcard.</p>
+        <div class="add-form">
+          <input type="text" id="newUrlPattern" placeholder="e.g., *.example.com/*/person-name*">
+          <button id="addUrlPatternBtn" class="btn-primary">Add Pattern</button>
+        </div>
+        <div id="urlPatternsList" class="patterns-list">
+          <!-- Patterns rendered here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Sites Tab -->
+    <section id="tab-sites" class="tab-content">
+      <h2>Site Management</h2>
+
+      <div class="site-section">
+        <h3>Whitelisted Sites <span class="hint">(filtering disabled)</span></h3>
+        <div class="add-form">
+          <input type="text" id="newWhitelistSite" placeholder="e.g., example.com">
+          <button id="addWhitelistBtn" class="btn-primary">Add</button>
+        </div>
+        <div id="whitelistSites" class="sites-list"></div>
+      </div>
+    </section>
+
+    <!-- Advanced Tab -->
+    <section id="tab-advanced" class="tab-content">
+      <h2>Advanced Settings</h2>
+
+      <div class="setting-row">
+        <label>Filter Mode</label>
+        <select id="filterModeSelect">
+          <option value="redact">Redact words only</option>
+          <option value="hide">Hide entire post/article</option>
+        </select>
+      </div>
+
+      <div class="setting-row">
+        <label>Face Match Threshold</label>
+        <input type="range" id="thresholdSlider" min="0.5" max="0.95" step="0.05" value="0.65">
+        <span id="thresholdValue">0.65</span>
+      </div>
+
+      <div class="danger-zone">
+        <h3>Danger Zone</h3>
+        <button id="resetBtn" class="btn-danger">Reset All Settings</button>
+      </div>
+    </section>
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>
